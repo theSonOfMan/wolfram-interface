@@ -2,9 +2,23 @@
 
 {% block content %}
 <div class='container'>
-
   {% for pod in info %}
   <hr>
+  {% if pod.title == "Raw output" %}
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+  <div class='row'>
+    <div class=col-2>
+      <p style='text-align:right'>Raw output</p>
+    </div>
+    <div class='col mr-auto'>
+      <pre>
+        <code class="prettyprint">
+          {{ pod.output }}
+        </code>
+      </pre>
+    </div>
+  </div>
+  {% else %}
   <div class='row'>
     <div class='col-2'>
       <p style='text-align:right'>{{pod.title}}</p>
@@ -16,6 +30,7 @@
         {% endfor %}
     </div>
   </div>
+  {% endif %}
   {% endfor %}
   <hr>
 </div>
