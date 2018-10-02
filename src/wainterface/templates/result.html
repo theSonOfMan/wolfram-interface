@@ -13,7 +13,7 @@
     <div class='col mr-auto'>
       <pre>
         <code class="prettyprint">
-          {{ pod.output }}
+{{ pod.output }}
         </code>
       </pre>
     </div>
@@ -25,6 +25,10 @@
     </div>
     <div class='col mr-auto'>
         {% for img in pod.info %}
+        {% if img.title %}
+        <hr>
+        <p style='text-align:left'>{{img.title}}</p>
+        {% endif %}
         <img src= {{img.src}}
         alt={{img.alt}} style='display:block;margin-right:auto'>
         {% endfor %}
