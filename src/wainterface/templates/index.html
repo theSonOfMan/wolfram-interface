@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class='container'>
+  <hr>
+  <form action='/result/' method='POST'>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Enter what you want to calculate or know about" aria-label="Input" aria-describedby="button-addon2" name="input">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Input</button>
+      </div>
+    </div>
+    <div class="col-3 mr-auto">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="metricRadio" id="metricRadio1" value="metric" checked>
+        <label class="form-check-label" for="metricRadio1">
+          Metric
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="metricRadio" id="metricRadio2" value="nonmetric">
+        <label class="form-check-label" for="metricRadio2">
+          Nonmetric
+        </label>
+      </div>
+      <hr>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="rawRadio" id="rawRadio1" value="false" checked>
+        <label class="form-check-label" for="rawRadio1">
+          Formatted output
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="rawRadio" id="rawRadio2" value="true">
+        <label class="form-check-label" for="rawRadio2">
+          Raw output
+        </label>
+      </div>
+    </div>
+  </form>
+  <hr>
+</div>
+
+{% endblock content %}
